@@ -16,14 +16,14 @@
 		border-width:		1px,
 		element-height:		2.75em,
 		element-margin:		1.5em,
-		letter-spacing:		0.2em
+		letter-spacing:		0.1em
 	);
 
 // Font.
 	$font: (
-		family:				('Source Sans Pro', Helvetica, sans-serif),
-		family-fixed:		('Courier New', monospace),
-		weight:				300
+		family: (-apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif),
+		family-fixed: ('Courier New', monospace),
+		weight: 300
 	);
 
 // Palette.
