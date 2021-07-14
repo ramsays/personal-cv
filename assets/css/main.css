@@ -829,7 +829,7 @@ button:disabled,
   display: block;
   margin-bottom: 1.5em;
 }
-#main .avatar img {
+#main .avatar picture, #main .avatar img {
   display: block;
   margin: 0 auto;
   border-radius: 100%;
