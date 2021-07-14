@@ -1,0 +1,10 @@
+{
+  "name": "personal-cv",
+  "scripts": {
+    "build:personal": "yarn sass assets/sass:assets/css --no-source-map",
+    "build:chordwriter": "yarn sass chordwriter/assets/sass:chordwriter/assets/css --no-source-map"
+  },
+  "dependencies": {
+    "sass": "^1.35.2"
+  }
+}
