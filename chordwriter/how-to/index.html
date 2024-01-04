@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../doc-styles.css" />
+
+    <meta property="og:title" content="Using ChordPro and Leadsheet Formats" />
+    <meta property="og:article" content="article" />
+    <meta property="og:image" content="https://ramsaysmith.me/chordwriter/images/og-banner.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="Chordwriter can handle multiple types of files designed to store songs with chord information. These include the open ChordPro standard and the Leadsheet music format." />
+
+    <title>Chordwriter | Using ChordPro and Leadsheet Formats</title>
+    <meta name="description" content="Chordwriter can handle multiple types of files designed to store songs with chord information. These include the open ChordPro standard and the Leadsheet music format." />
+  </head>
+
+  <body>
+
+    <header>
+      <picture>
+        <source srcset="../images/chordwriter-text.webp" type="image/webp" />
+        <img src="../images/chordwriter-text.png" alt="Chordwriter" />
+      </picture>
+
+      <h1>Documentation</h1>
+    </header>
+
+    <section id="main" class="container">
+
+      <h2>On this Page</h2>
+      <ol>
+        <li><a href="#first-song">Creating and Editing Songs</a></li>
+        <li><a href="#chord-concept">The Leadsheet Chord Concept</a></li>
+        <li><a href="#import-export">Importing and Exporting Files</a></li>
+        <li><a href="#leadsheet-format">Leadsheet File Format</a></li>
+        <li><a href="#chordpro-format">ChordPro File Format</a></li>
+      </ol>
+
+      <h2 id="first-song">Creating and Editing Songs</h2>
+      <picture>
+        <source srcset="../images/chord-dialog.webp" type="image/webp" />
+        <img src="../images/chord-dialog.png" alt="Chordwriter chord editing window" />
+      </picture>
+      <p>You can start by selecting new from the file menu. By default, Chordwriter creates an <strong>LMF (Leadsheet
+          Music File)</strong> when you create a new song. When you save the file, you can choose to also save it as a
+        ChordPro file or OnSong file.</p>
+      <p>Each song is split into &quot;sections&quot;, such as verses, chorus, bridge, etc. To create a section click on
+        the &quot;plus&quot; icon in the upper right corner. Once you create a section, you can add lines (lyrics) by
+        clicking on the &quot;plus&quot; icon by the name of each section.</p>
+      <h3>Dealing with Chords</h3>
+      <p>Chords can be created by clicking on syllables in a line. There are two options for creating chords. If you are
+        editing a Leadsheet Music File, the chord editor will give you fields based on the <a
+          href="#chord-concept">Leadsheet chord concept</a>. If you are not using a Leadsheet Music File,
+        it will show a basic text editor to enter the chord you want.</p>
+
+      <h3>Chord Prediction</h3>
+      <p>Only available in Leadsheet Music Files</p>
+      <p>Chordwriter automatically splits words into their respective syllables to assign each chord. The reason for this
+        is that after you add chords to the first of a particular group, i.e. verse 1, it will automatically copy the
+        chords to other sections without additional work. This is why you must specify a type when creating a group.
+        Although you will not see the repeated chords in the editor, they are present in the print preview.</p>
+
+      <h2 id="chord-concept">The Leadsheet Chord Concept</h2>
+      <picture class="invert">
+        <source srcset="../images/chord-format-layout.webp" type="image/webp" />
+        <img src="../images/chord-format-layout.png" alt="III# maj sus4 / I" />
+      </picture>
+      <p>Both Leadsheet and Chordwriter store chords in a proprietary format. Each chord can be split up into five
+        different components. Not all of these components are used, and only the bash chord is required.</p>
+      <p>Chordwriter understands basic music theory, and so a key is only required when you need to render the song. The
+        base chord is <strong>I - VII</strong> in a musical scale. It will automatically determine the mood based on the
+        position in the scale at runtime. The mood field is used when you want to override what the program would normally
+        display. You also may need to use a chord that is not in the scale. You can use the <strong>flat/sharp
+          option</strong> to adjust the base note by a half step. Not that the flat/sharp option will not affect the bass
+        note.</p>
+      <p>Unlike the previous options, the <strong>extension</strong> and <strong>bass</strong> option stand on their own
+        and do not affect the bass chord. The extension adds various addtions to the chord such as sevenths, suspensions,
+        add9s, etc. The bass field represents the note that should be played by the bass player or by the left hand on
+        piano.</p>
+
+      <h2 id="import-export">Import and Exporting Files</h2>
+      <p>Chordwriter currently supports importing from and exporting to Leadsheet, ChordPro, and OnSong formats. It can
+        also export to a text file for use in worship presentation programs. Chordwriter's support for importing and
+        export are listed here.</p>
+      <table class="alt">
+        <thead>
+          <tr>
+            <td>File Format</td>
+            <td>Import/Export</td>
+            <td>Metadata</td>
+            <td>Lyrics</td>
+            <td>Chords</td>
+            <td>Transposition</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Leadsheet (.lmf)</td>
+            <td>Both</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>ChordPro (.cho, .chd, .chopro)</td>
+            <td>Both</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>OnSong (.txt)</td>
+            <td>Both</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Partial<sup>1</sup></td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>OpenSong (.xml)</td>
+            <td>Both</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>SongShowPlus (.txt)</td>
+            <td>Export only</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>Adobe PDF (.pdf)</td>
+            <td>Export only</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Varies<sup>2</sup></td>
+            <td>Varies<sup>2</sup></td>
+          </tr>
+          <tr>
+            <td>Other (.*)</td>
+            <td>Import only</td>
+            <td>Yes</td>
+            <td>Varies</td>
+            <td>Varies</td>
+            <td>N/A</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><sup>1</sup>Chordwriter will try to import if the chords are in a ChordPro format.<br /><sup>2</sup>Depends on
+        the source music document.</p>
+      <hr />
+      <p>For the other category, Chordwriter will do its best to import based on known patterns for encoding chord
+        information. We cannot garuntee that it will be intelligible, much less correct.</p>
+      <p>Is there a format you would like to see supported? <a href="contact">Let me know</a> and I will do my best to
+        support it in the next update.</p>
+
+      <h2 id="leadsheet-format">Leadsheet File Format</h2>
+      <div class="row uniform 100%">
+        <div class="5u 12u(narrower)">
+          <p>A Leadsheet Music File is an XML-based storage format that is highly structured. It is seperated into several
+            sections, <strong>properties, encoding, and music</strong>.</p>
+          <p>The first section, properties, contains basic information about the song, such as the authors of the song as
+            well as any ID numbers associated with the song. Note that the song name is also at the root level.</p>
+        </div>
+        <div class="7u 12u(narrower)">
+<pre>&lt;title&gt;Absent From Flesh&lt;/title&gt;
+  &lt;properties&gt;
+  &lt;copyright&gt;2011 Sojourn Community Church&lt;/copyright&gt;
+  &lt;creator type=&quot;lyricist&quot;&gt;Jamie Barnes&lt;/creator&gt;
+  &lt;creator type=&quot;composer&quot;&gt;Jamie Barnes&lt;/creator&gt;
+  &lt;guid type=&quot;leadsheetid&quot;&gt;176&lt;/guid&gt;
+  &lt;guid type=&quot;ccli&quot;&gt;5918890&lt;/guid&gt;
+&lt;/properties&gt;</pre>
+        </div>
+      </div>
+      <div class="row uniform 100%">
+        <div class="4u 12u(narrower)">
+          <p>The encoding section contains information about the program that created the file and also the capabilities
+            the song supports. It also specifies when the song was created and edited.</p>
+          <p>The file also allows you to specify what keys are supported (default is all), and what type of music the song
+            contains. As of now, only the chord sheet is enabled, as no specification for storing lead or harmonic
+            information has been added to the file specification.</p>
+        </div>
+        <div class="8u 12u(narrower)">
+<pre>&lt;encoding&gt;
+  &lt;software&gt;Leadsheet Worship Music System&lt;/software&gt;
+  &lt;date type="created"&gt;2015-01-08&lt;/date&gt;
+  &lt;date type="modified"&gt;2015-01-08 12:44:01&lt;/date&gt;
+  &lt;supports name="keys" value="all" /&gt;
+  &lt;supports name="transpose" value="true" /&gt;
+  &lt;sheet name="chord" enabled="true" /&gt;
+  &lt;sheet name="lead" enabled="false" /&gt;
+  &lt;sheet name="vocal" enabled="false" generator="auto" /&gt;
+&lt;/encoding&gt;</pre>
+        </div>
+      </div>
+      <div class="row uniform 100%">
+        <div class="4u 12u(narrower)">
+          <p>Last, but certainly not least, is the music itself; The first section contains baisc information about the
+            music, such as the <strong>key, tempo, and meter</strong>. Also it specifies whether chord repeating should be
+            used.</p>
+          <p>Chord repeating is based on the principle that similar sections (like verses) will all have the same poetic
+            structure as well as chords. Thus, a program or editor should be able to simply copy the chords from the first
+            verse to the others when rendering.</p>
+          <p>The song is split up into groups and lines. Each line may have chords that are noted as described in the <a
+              href="#chord-concept">Leadsheet Chord Concept</a>. Be aware that syllables are determined
+            programmatically so accuracy may vary with the program being used.</p>
+        </div>
+        <div class="8u 12u(narrower)">
+<pre>&lt;music&gt;
+  &lt;key mood="major"&gt;G&lt;/key&gt;
+  &lt;meter upper="" lower="" /&gt;
+  &lt;tempo type="bpm"&gt;92&lt;/tempo&gt;
+  &lt;repeat-music type="all" groups="verse" /&gt;
+  &lt;group type="verse" name="Verse 1"&gt;
+  &lt;line&gt;
+    &lt;chords&gt;
+      &lt;chord syllable="1" chord="I" acc="" mood="" ext="" over="" /&gt;
+      &lt;chord syllable="4" chord="V" acc="" mood="" ext="" over="" /&gt;
+      &lt;chord syllable="7" chord="VI" acc="" mood="" ext="" over="" /&gt;
+      &lt;chord syllable="9" chord="I" acc="" mood="" ext="" over="" /&gt;
+    &lt;/chords&gt;
+    &lt;text&gt;Marvelous grace of our loving Lord,&lt;/text&gt;
+  &lt;/line&gt;
+...</pre>
+        </div>
+      </div>
+
+      <h2 id="chordpro-format">ChordPro File Format</h2>
+      <p>Leadsheet can also read and edit the widely used ChordPro file format. It encodes chords using braces like
+        <strong>[Dm]</strong> and uses braces to define directives and other metadata. There is no standard format for
+        ChordPro files so directive support varies by program. Here are a list of directives supported by Chordwriter. Be
+        aware that unsupported directives will be ignored and will not be included when you save the file.</p>
+      <ul>
+        <li><strong>{title: ...}</strong> or <strong>{t: ...}</strong> The title of the song.</li>
+        <li><strong>{subtitle: ...}</strong>, <strong>{st: ...}</strong> or <strong>{su: ...}</strong> The artist name or
+          any other byline information. You can specify multiple artists by separating names with a semi-colon. - <em>Kim
+            Walker-Smith; Chris Quilala</em></li>
+        <li><strong>{artist: ...}</strong> or <strong>{a: ...}</strong> The artist name or any other byline information.
+          You can specify multiple artists by separating names with a semi-colon. - <em>Kim Walker-Smith; Chris
+            Quilala</em></li>
+        <li><strong>{key: ...}</strong> or <strong>{k: ...}</strong> or <strong>{ok: ...}</strong> The key of the song
+          written as a key with enharmonic preference and an optional "m" to indicate minor. - <em>alphabetic, e.g. Bb or
+            Em</em></li>
+        <li><strong>{tempo: ...}</strong> The beats per minute (BPM) - <em>numeric</em></li>
+        <li><strong>{time: ...}</strong> The time signature - <em>numeric beat over bar e.g. 3/4</em></li>
+        <li><strong>{copyright: ...}</strong> or <strong>{footer: ...}</strong> Specifies copyright footer text to appear
+          at the bottom of the page or lyrics projection.</li>
+        <li><strong>{ccli: ...}</strong> The CCLI number of the song.</li>
+        <li><strong>{leadsheet: ...}</strong> The Leadsheet (online) ID number of the song.</li>
+      </ul>
+      <p>As of now, Chorwriter supports a simple set of ChordPro music directives. Again, any unrecognized directives will
+        be ignored and that information may be lost when you save the file.</p>
+      <ul>
+        <li><strong>{comment: ...}</strong> or <strong>{c: ...}</strong> or <strong>{comment_bold: ...}</strong> or
+          <strong>{cb: ...}</strong> or <strong>{comment_italic: ...}</strong> or <strong>{ci: ...}</strong> or
+          <strong>{guitar_comment: ...}</strong> or <strong>{gc: ...}</strong> Defines a comment. Chordwriter will
+          interpret this as a section title.</li>
+        <li><strong>{start_of_verse}</strong> or <strong>{sov}</strong> Specifies the start of a verse.</li>
+        <li><strong>{end_of_verse}</strong> or <strong>{eov}</strong> Specifies the end of a verse.</li>
+        <li><strong>{start_of_bridge}</strong> or <strong>{sob}</strong> Specifies the start of a bridge.</li>
+        <li><strong>{end_of_bridge}</strong> or <strong>{eob}</strong> Specifies the end of a bridge.</li>
+        <li><strong>{start_of_chorus}</strong> or <strong>{soc}</strong> Specifies the start of a chorus.</li>
+        <li><strong>{end_of_chorus}</strong> or <strong>{eoc}</strong> Specifies the end of a chorus.</li>
+      </ul>
+      <p>We are continuing to improve our support for the ChordPro file format. If you have suggestions or functionality
+        you would like to see supported in later versions, please <a href="contact">let us know</a> so we can make that
+        happen. We are working on support for chord tabulature support, both automatically generated and custom tabs.</p>
+    </section>
+
+    <footer>
+      <span>Chordwriter and the Leadsheet Format are &copy; 2024 Ramsay Smith</span>
+    </footer>
+
+  </body>
+</html>
