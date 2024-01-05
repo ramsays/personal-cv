@@ -1,0 +1,17 @@
+
+<svg width="152" height="152" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <style>
+    rect { fill: #3B6C7C; }
+    path { fill: #3B6C7C; }
+
+    @media (prefers-color-scheme: dark) {
+      rect { fill: #FFFFFF; }
+      path { fill: #FFFFFF; }
+    }
+  </style>
+
+  <g fill="none" fill-rule="evenodd">
+    <rect x="55" y="4" width="10" height="140" />
+    <path d="M55 136 v 10 q 61 -10 61 -50 q 0 -24 -22 -24 q -15 0 -29 21 v 12 q 15 -19 23 -19 q 12 0 12 15 q 0 30 -45 38" />
+  </g>
+</svg>
